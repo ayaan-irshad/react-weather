@@ -1,0 +1,24 @@
+.card {
+	display: flex;
+	/* flex-direction: column; */
+	justify-content: space-evenly;
+	background-color: #d3f4ff;
+	align-items: center;
+	width: 50%;
+	margin: 5% auto;
+	border-radius: 8px;
+}
+
+.card--details__heading {
+	margin-bottom: 0;
+	font-size: 2rem;
+}
+
+.card--details__description {
+	font-size: 1.2rem;
+}
+
+.card--details__date {
+	font-size: 0.8rem;
+	color: rgb(82, 82, 82);
+}

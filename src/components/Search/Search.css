@@ -1,0 +1,24 @@
+.form {
+	width: 50%;
+	display: flex;
+	margin: 3% auto;
+	justify-content: center;
+}
+
+.form--field {
+	border: none;
+	font-size: 1.2rem;
+	padding: 5px 20px;
+	border-radius: 6px;
+	margin-right: 4%;
+}
+
+.form--submit {
+	border: none;
+	padding: 5px 20px;
+	border-radius: 6px;
+	font-weight: bold;
+	font-family: "Muli";
+	letter-spacing: 1px;
+	line-height: 3;
+}
