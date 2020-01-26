@@ -13,17 +13,12 @@ class App extends React.Component {
 	};
 
 	onSearchSubmit = async term => {
-		const response = await await axios.get(
-			"http://api.weatherstack.com/current",
-			{
-				params: {
-					access_key: process.env.REACT_APP_API_KEY,
-					query: term
-				}
+		const response = await axios.get("http://api.weatherstack.com/current", {
+			params: {
+				access_key: process.env.REACT_APP_API_KEY,
+				query: term
 			}
-		);
-
-		console.log(response);
+		});
 
 		this.setState({ data: response.data });
 	};
