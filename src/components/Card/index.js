@@ -24,7 +24,26 @@ class Card extends React.Component {
 	};
 
 	renderContent() {
-		if (this.state.new !== undefined) {
+		if (typeof this.props.error === "string") {
+			return (
+				<div className="card">
+					<div className="card--details">
+						<h3 className="card--details__heading">{this.props.error}</h3>
+						<h4
+							className="card--details__description"
+							style={{ color: desColor }}
+						>
+							Sunn
+						</h4>
+						<h5 className="card--details__date">{`${d.getDate()} ${
+							months[d.getMonth()]
+						}, ${d.getFullYear()}`}</h5>
+					</div>
+
+					<img src={mySvg} alt="sunny weather icon" className="card--img" />
+				</div>
+			);
+		} else if (this.state.new !== undefined) {
 			return (
 				<div className="card">
 					<div className="card--details">

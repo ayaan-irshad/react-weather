@@ -9,24 +9,30 @@ require("dotenv").config();
 console.log(process.env.REACT_APP_API_KEY);
 class App extends React.Component {
 	state = {
-		data: {}
+		data: {},
+		error: null
 	};
 
 	onSearchSubmit = async term => {
-		const response = await axios.get("http://api.weatherstack.com/current", {
-			params: {
-				access_key: process.env.REACT_APP_API_KEY,
-				query: term
-			}
-		});
+		try {
+			const response = await axios.get("http://api.weatherstack.com/current", {
+				params: {
+					access_key: process.env.REACT_APP_API_KEY,
+					query: term
+				}
+			});
 
-		this.setState({ data: response.data });
+			this.setState({ data: response.data });
+		} catch (err) {
+			alert(err);
+			this.setState({ error: err });
+		}
 	};
 	render() {
 		return (
 			<div className="container">
 				<Search onSubmitOwn={this.onSearchSubmit} />
-				<Card data={this.state.data} />
+				<Card data={this.state.data} error={this.state.error} />
 			</div>
 		);
 	}
