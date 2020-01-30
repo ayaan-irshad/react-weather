@@ -17,7 +17,7 @@ class App extends React.Component {
 		try {
 			const response = await axios.get("http://api.weatherstack.com/current", {
 				params: {
-					access_key: process.env.REACT_APP_API_KEY,
+					access_key: process.env.API_KEY,
 					query: term
 				}
 			});
