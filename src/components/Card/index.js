@@ -24,6 +24,9 @@ class Card extends React.Component {
 	};
 
 	renderContent() {
+		if (this.state.error) {
+			return <div>{this.state.error}</div>;
+		}
 		if (typeof this.props.error === "string") {
 			return (
 				<div className="card">
@@ -116,10 +119,14 @@ class Card extends React.Component {
 		// console.log(this.props.data.current.temperature);
 		// console.log(this.props);
 		// this.setState((state, props) => ({ i :n}));
-		if (this.props.data !== prevProps.data) {
+		if (this.props.data !== prevProps.data && !this.props.data.error) {
 			//console.log(props);
+			this.setState({ error: undefined });
 			this.setState({ new: this.props.data });
+
 			console.log(this.state.new);
+		} else if (this.props.data !== prevProps.data && this.props.data.error) {
+			this.setState({ error: this.props.data.error.info });
 		}
 	};
 	render() {
