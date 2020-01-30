@@ -7,7 +7,6 @@
     npm install
     npm start
 
-## You will need to create a .env file with a CORS proxy and an API key in the below format :
+## You will need to create a .env file with an API key in the below format :
 
     REACT_APP_API_KEY: yourapikey
-    PROXY: https://cors-anywhere.herokuapp.com/
